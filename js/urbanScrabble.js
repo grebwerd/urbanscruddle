@@ -1,6 +1,4 @@
 
-
-
 const baseApiURL = "http://api.urbandictionary.com";
 const apiURLDefine = baseApiURL + "/v0/define?term=";
 const randomUrl = baseApiURL + "/v0/random";
@@ -19,9 +17,8 @@ function getRandomWord(){
 
 
 function getWord(){
-    
     var resultElement = document.getElementById('getResult1');
-  
+    
     resultElement.innerHTML = '';
     var word = document.getElementById('defineWord').value
       axios.get(apiURLDefine+word)
@@ -30,6 +27,9 @@ function getWord(){
           resultElement.innerHTML = generateSuccessHTMLOutput(response, word)
       })
       .catch(err=>console.log(err));
+      document.getElementById('defineWord').value = "enter another";
+      
+     
 }
 
 function generateSuccessHTMLOutput(response, word) {
