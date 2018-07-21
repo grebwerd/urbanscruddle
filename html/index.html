@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript" src="/Github/urbanscruddle/js/urbanScrabble.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="../js/bundle.js"></script>
+      
+       <!-- <script type="text/javascript" src="/Github/urbanscruddle/js/urbanScruddle.js"></script>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
         <script type="text/javascript">
         var ctx = null;
         var gameMap = [
@@ -72,20 +75,19 @@
         <br/>
          
             <input type="text" value="enter text" id="defineWord"/>
-            <input type="submit" value="submit" id="submitButton" onclick="getWord()">
+           
+            <input type="submit" value="submit" id="submitButton" onclick='getWord()'>
+        
       
             <script>
             var input = document.getElementById("defineWord");
             input.addEventListener("keypress", function(event) {
-                //event.preventDefault();
                 if(event.keyCode === 13){
                     document.getElementById("submitButton").click();
                    
                 }
             })
             </script>
-          
-        
         <p id="getResult1">
          
         </p>

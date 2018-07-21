@@ -1,7 +1,9 @@
-
+var _ = require('underscore');
+var axios = require('axios')
 const baseApiURL = "http://api.urbandictionary.com";
 const apiURLDefine = baseApiURL + "/v0/define?term=";
 const randomUrl = baseApiURL + "/v0/random";
+
 
 function getRandomWord(){
     var resultElement = document.getElementById('getResult1');
@@ -16,7 +18,7 @@ function getRandomWord(){
 }
 
 
-function getWord(){
+global.getWord = function (){
     var resultElement = document.getElementById('getResult1');
     
     resultElement.innerHTML = '';
@@ -33,7 +35,12 @@ function getWord(){
 }
 
 function generateSuccessHTMLOutput(response, word) {
-    return  '<h4>Result for ' + word + ' </h4>' + 
-            '<h5>Data:</h5>' + 
-            '<pre>' + JSON.stringify(response.data, null, '\t') + '</pre>'; 
+var maxThumbsUpDefinition = _.max(response.data.list, 'thumbs_up');
+
+console.log("test");
+    return  '<h4>Result for: ' + word + ' </h4>' + 
+            '<pre>'+ JSON.stringify(maxThumbsUpDefinition, null, '\t') + '</pre>'
   }
+
+
+  
