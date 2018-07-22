@@ -31,15 +31,10 @@ global.getWord = function (){
           resultElement.innerHTML = generateSuccessHTMLOutput(response, word)
       })
       .catch(err=>console.log(err));
-      document.getElementById('defineWord').value = "enter another";
-      
-     
 }
 
 function generateSuccessHTMLOutput(response, word) {
 var maxThumbsUpDefinition = _.max(response.data.list, 'thumbs_up');
-
-console.log("test");
     return  '<h4>Result for: ' + word + ' </h4>' + 
             '<pre>'+ JSON.stringify(maxThumbsUpDefinition, null, '\t') + '</pre>'
   }

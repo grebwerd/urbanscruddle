@@ -74,13 +74,17 @@
         </canvas>
         <br/>
          
-            <input type="text" value="enter text" id="defineWord"/>
+            <input type="text" value="input word" id="defineWord"/>
            
             <input type="submit" value="submit" id="submitButton" onclick='getWord()'>
         
       
             <script>
             var input = document.getElementById("defineWord");
+            input.addEventListener("click", function() {
+                document.getElementById("defineWord").value = "";
+            })
+
             input.addEventListener("keypress", function(event) {
                 if(event.keyCode === 13){
                     document.getElementById("submitButton").click();
