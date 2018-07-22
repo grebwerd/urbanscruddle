@@ -73,25 +73,10 @@
 
         </canvas>
         <br/>
-         
-            <input type="text" value="input word" id="defineWord"/>
-           
-            <input type="submit" value="submit" id="submitButton" onclick='getWord()'>
+        <input type="text" value="input word" id="defineWord" onkeypress="keyPressEnter(event)" onclick="clearField()"/>
         
-      
-            <script>
-            var input = document.getElementById("defineWord");
-            input.addEventListener("click", function() {
-                document.getElementById("defineWord").value = "";
-            })
-
-            input.addEventListener("keypress", function(event) {
-                if(event.keyCode === 13){
-                    document.getElementById("submitButton").click();
-                   
-                }
-            })
-            </script>
+        <input type="submit" value="submit" id="submitButton" onclick="getWord()">
+        
         <p id="getResult1">
          
         </p>

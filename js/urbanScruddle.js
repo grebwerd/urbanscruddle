@@ -38,4 +38,14 @@ var maxThumbsUpDefinition = _.max(response.data.list, 'thumbs_up');
   }
 
 
+ global.clearField = function() {
+        document.getElementById("defineWord").value = "";
+  }
+
+  global.keyPressEnter = function(event) {
+    if(event.keyCode === 13){
+        document.getElementById("submitButton").click();
+    }
+  }
+
   

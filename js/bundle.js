@@ -40,6 +40,16 @@ var maxThumbsUpDefinition = _.max(response.data.list, 'thumbs_up');
   }
 
 
+ global.clearField = function() {
+        document.getElementById("defineWord").value = "";
+  }
+
+  global.keyPressEnter = function(event) {
+    if(event.keyCode === 13){
+        document.getElementById("submitButton").click();
+    }
+  }
+
   
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"axios":2,"underscore":28}],2:[function(require,module,exports){
